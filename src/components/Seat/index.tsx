@@ -8,10 +8,10 @@ const Seat = ({ seat_number }: Props) => {
   return (
     <button
       type="button"
-      className="border-2 border-gray-600 w-16 h-24 flex flex-col items-center justify-end gap-8"
+      className="border-2 border-gray-600 w-16 h-24 flex flex-col items-center justify-end gap-8 rounded-lg"
     >
       <p>{seat_number}</p>
-      <div className="border-2 border-gray-600 h-3 w-6 mb-2"></div>
+      <div className="border-2 border-gray-600 h-3 w-6 mb-2 rounded-sm"></div>
     </button>
   );
 };

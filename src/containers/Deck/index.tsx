@@ -8,8 +8,10 @@ type Props = {
 
 const Deck = ({ starting_seat, deck }: Props) => {
   return (
-    <div className="flex flex-col items-center gap-2 p-2 max-w-72 border-2 border-gray-600">
-      <p className="bg-gray-600 text-white w-full text-center">{deck}</p>
+    <div className="flex flex-col items-center gap-2 p-2 max-w-72 border-2 border-gray-600 rounded-lg">
+      <p className="bg-gray-600 text-white w-full text-center rounded-lg">
+        {deck}
+      </p>
       <div className="grid grid-cols-4 gap-2">
         {[...Array(24).keys()].map((x) => {
           let seat_number = x + starting_seat;

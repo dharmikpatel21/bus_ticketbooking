@@ -153,53 +153,57 @@ const data = [
 
 const Dashboard = () => {
   return (
-    <Table>
-      <TableCaption>A list of ticket bookings.</TableCaption>
-      <TableHeader>
-        <TableRow>
-          <TableHead>Id</TableHead>
-          <TableHead>Name</TableHead>
-          <TableHead>Email</TableHead>
-          <TableHead>Seat Number</TableHead>
-          <TableHead>Date of booking</TableHead>
-        </TableRow>
-      </TableHeader>
-      <TableBody>
-        {data.map((item) => (
-          <TableRow key={item.Id}>
-            <TableCell className="font-medium">{item.Id}</TableCell>
-            <TableCell>{item.Name}</TableCell>
-            <TableCell>{item.Email}</TableCell>
-            <TableCell>{item.seat_number}</TableCell>
-            <TableCell>{item.date_of_booking}</TableCell>
-            <TableCell>
-              <button
-                type="button"
-                className="bg-black text-white rounded-lg  w-[70px] py-1"
-              >
-                Edit
-              </button>
-            </TableCell>
-            <TableCell>
-              <button
-                type="button"
-                className="bg-black text-white rounded-lg  w-[70px] py-1"
-              >
-                save
-              </button>
-            </TableCell>
-            <TableCell>
-              <button
-                type="button"
-                className="bg-rose-400/30 border border-red-600 text-rose-600 rounded-lg  w-[70px] py-1"
-              >
-                Delete
-              </button>
-            </TableCell>
-          </TableRow>
-        ))}
-      </TableBody>
-    </Table>
+    <section>
+      <div className="border-2 border-gray-600 rounded-lg">
+        <Table>
+          <TableCaption>A list of ticket bookings.</TableCaption>
+          <TableHeader>
+            <TableRow>
+              <TableHead>Id</TableHead>
+              <TableHead>Name</TableHead>
+              <TableHead>Email</TableHead>
+              <TableHead>Seat Number</TableHead>
+              <TableHead>Date of booking</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {data.map((item) => (
+              <TableRow key={item.Id}>
+                <TableCell className="font-medium">{item.Id}</TableCell>
+                <TableCell>{item.Name}</TableCell>
+                <TableCell>{item.Email}</TableCell>
+                <TableCell>{item.seat_number}</TableCell>
+                <TableCell>{item.date_of_booking}</TableCell>
+                <TableCell>
+                  <button
+                    type="button"
+                    className="bg-gray-600 text-white rounded-lg  w-[70px] py-1"
+                  >
+                    Edit
+                  </button>
+                </TableCell>
+                <TableCell>
+                  <button
+                    type="button"
+                    className="bg-gray-600 text-white rounded-lg  w-[70px] py-1"
+                  >
+                    save
+                  </button>
+                </TableCell>
+                <TableCell>
+                  <button
+                    type="button"
+                    className="bg-rose-400/30 border border-red-600 text-rose-600 rounded-lg  w-[70px] py-1"
+                  >
+                    Delete
+                  </button>
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </div>
+    </section>
   );
 };
 
