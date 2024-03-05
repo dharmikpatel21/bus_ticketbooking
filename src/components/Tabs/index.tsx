@@ -1,8 +1,8 @@
 "use client";
 import { useState } from "react";
 import { Tab } from "@headlessui/react";
-import Dashboard from "../Dashboard";
-import BookTickets from "../BookTickets";
+import Dashboard from "../../containers/Dashboard";
+import BookTickets from "../../containers/BookTickets";
 import Image from "next/image";
 
 function classNames(...classes) {
@@ -35,10 +35,10 @@ export default function Tabs() {
               className={({ selected }) =>
                 classNames(
                   "w-full rounded-lg py-2.5 text-sm font-medium leading-5",
-                  "ring-white/60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2",
+                  "ring-black/60 ring-offset-2 ring-offset-white focus:outline-none focus:ring-2",
                   selected
-                    ? "bg-white text-blue-700 shadow"
-                    : "text-blue-100 hover:bg-white/[0.12] hover:text-white"
+                    ? "bg-black text-white shadow"
+                    : "text-black-100 hover:bg-black/40"
                 )
               }
             >
