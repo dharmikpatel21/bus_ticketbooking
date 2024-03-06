@@ -25,7 +25,7 @@ const BookTickets = (props: Props) => {
         setselectedSeats={setselectedSeats}
         selectedSeats={selectedSeats}
       />
-      <MyModal />
+      <MyModal selectedSeats={selectedSeats} />
       {/* <div>
         <Link
           href={"/"}
