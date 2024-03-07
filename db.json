@@ -1,0 +1,40 @@
+{
+  "bookings": [
+    {
+      "id": "5b74",
+      "name": "Dharmik Patel",
+      "email": "djdevil2110@gmail.com",
+      "phone": "01234567890",
+      "date": "2024-03-07",
+      "selectedSeats": [
+        2,
+        5,
+        4
+      ]
+    },
+    {
+      "id": "f6bd",
+      "name": "Rakshash PATEL",
+      "email": "aksh@gmail.com",
+      "phone": "01234567890",
+      "date": "2024-03-22",
+      "selectedSeats": [
+        6,
+        7
+      ]
+    },
+    {
+      "id": "c947",
+      "name": "Boski",
+      "email": "Boski@gmail.com",
+      "phone": "0123456708",
+      "date": "2024-03-14",
+      "selectedSeats": [
+        21,
+        8,
+        30,
+        23
+      ]
+    }
+  ]
+}

@@ -24,6 +24,7 @@ const Input = forwardRef<HTMLInputElement, Props>(
         </label>
         <div className="mt-2">
           <input
+            {...props}
             name={name}
             type={type}
             ref={inputRef}

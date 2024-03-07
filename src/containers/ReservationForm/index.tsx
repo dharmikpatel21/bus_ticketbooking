@@ -1,5 +1,6 @@
 import Input from "@/components/Input";
 import { emailRegex, nameRegex, phoneRegex } from "@/lib/regex";
+import { format } from "date-fns";
 import React from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 
@@ -8,6 +9,7 @@ type InformationTypes = {
   password: string;
   name: string;
   phone: number;
+  date: Date;
 };
 
 type Props = {
@@ -19,14 +21,32 @@ const ReservationForm = ({ selectedSeats }: Props) => {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm<InformationTypes>();
 
-  const onSubmit: SubmitHandler<InformationTypes> = (data) => {
-    console.log(data);
-  };
   const bookedSeats = selectedSeats.selectedSeats.map((x) => {
     return `${x},`;
   });
+  const onSubmit: SubmitHandler<InformationTypes> = async (data) => {
+    const { name, email, phone, date } = data;
+    const selectedSeatsArray = selectedSeats.selectedSeats;
+
+    const formattedData = {
+      name: name,
+      email: email,
+      phone: phone,
+      date: date,
+      selectedSeats: selectedSeatsArray,
+    };
+
+    const res = await fetch("http://localhost:3004/bookings", {
+      method: "POST",
+      body: JSON.stringify(formattedData),
+    });
+    console.log("====================================");
+    console.log(res);
+    console.log("====================================");
+  };
   return (
     <form className="w-full" onSubmit={handleSubmit(onSubmit)}>
       <div className="flex flex-col w-full gap-4">
@@ -74,6 +94,16 @@ const ReservationForm = ({ selectedSeats }: Props) => {
               value: phoneRegex,
               message: "please enter vaild phone number ",
             },
+          })}
+          required
+        />
+        <Input
+          label="Date of Ride"
+          type="date"
+          min={format(new Date(), "yyyy-MM-dd")}
+          errors={errors}
+          {...register("date", {
+            required: "date is required",
           })}
           required
         />
